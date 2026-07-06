@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國立臺南大學 NUTN｜教育的起點，創新的現在</title>
+<meta name="description" content="國立臺南大學創校於 1899 年，從臺灣第一所師範學校起家，今日已是橫跨教育、人文、理工、環境與生態、藝術、管理六大學院的精緻綜合大學。探索南大的優勢、強項系所、獲獎榮譽、師資力量、僑外生專區與學生福利。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15233d; --ink-2:#0e1829;
+    --brick:#a23c2c; --brick-soft:#c4664f;
+    --brass:#c4983f; --brass-soft:#e0bd72;
+    --paper:#f6f2e9; --paper-2:#ece3d2; --cloud:#fbf9f4;
+    --ink-text:#1d2433; --muted:#5d6373; --line:#dcd2bf;
+    --maxw:1180px; --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:"Noto Sans TC",system-ui,"PingFang TC","Microsoft JhengHei",sans-serif;color:var(--ink-text);background:var(--paper);line-height:1.85;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  h1,h2,h3,h4{font-family:"Noto Serif TC",serif;line-height:1.3;margin:0;font-weight:700;}
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:"Cormorant Garamond",serif;font-size:1.05rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--brick);}
+  .eyebrow.on-dark{color:var(--brass-soft);}
+  .eyebrow::before{content:"";width:26px;height:2px;background:currentColor;display:inline-block;}
+
+  .brickwork{background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.045) 0 1px,transparent 1px 27px),repeating-linear-gradient(90deg,rgba(255,255,255,.030) 0 1px,transparent 1px 64px);}
+  .brick-course{height:14px;width:100%;background:repeating-linear-gradient(90deg,var(--brick) 0 38px,transparent 38px 46px);opacity:.9;}
+
+  /* 導覽 */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(246,242,233,.88);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand img.logo{height:42px;width:auto;}
+  .brand .en{font-family:"Cormorant Garamond",serif;font-size:.95rem;letter-spacing:.22em;color:var(--brick);text-transform:uppercase;font-weight:600;}
+  .nav-right{display:flex;align-items:center;gap:24px;}
+  .nav-links{display:flex;align-items:center;gap:26px;}
+  .nav-links a{font-size:.94rem;font-weight:500;color:var(--ink-text);position:relative;padding:6px 0;transition:color .25s var(--ease);}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--brick);transition:width .3s var(--ease);}
+  .nav-links a:hover,.nav-links a.active{color:var(--brick);}
+  .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+  .lang-toggle{font-family:"Cormorant Garamond",serif;font-size:.95rem;letter-spacing:.1em;border:1px solid var(--line);border-radius:2px;padding:5px 12px;color:var(--muted);transition:.25s var(--ease);}
+  .lang-toggle:hover{border-color:var(--brick);color:var(--brick);}
+  .nav-cta{background:var(--ink);color:var(--paper);padding:9px 18px;border-radius:2px;font-weight:500;font-size:.88rem;transition:background .25s var(--ease);}
+  .nav-cta:hover{background:var(--brick);}
+  .nav-cta::after{display:none;}
+  .hamburger{display:none;background:none;border:0;cursor:pointer;padding:8px;}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.3s var(--ease);}
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;background:radial-gradient(120% 130% at 80% -10%,#1c2c4c 0%,var(--ink) 42%,var(--ink-2) 100%);color:var(--paper);padding:96px 0 0;}
+  .hero .wrap{position:relative;z-index:2;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;}
+  .hero h1{font-size:clamp(2.7rem,6vw,4.6rem);font-weight:900;color:#fff;letter-spacing:.01em;margin:22px 0 0;}
+  .hero h1 .accent{color:var(--brass-soft);}
+  .hero .lead{margin-top:26px;font-size:1.12rem;max-width:34em;color:rgba(246,242,233,.82);font-weight:300;}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px;}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:2px;font-weight:500;font-size:1rem;cursor:pointer;transition:transform .25s var(--ease),background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);}
+  .btn-primary{background:var(--brick);color:#fff;}
+  .btn-primary:hover{background:var(--brick-soft);transform:translateY(-2px);}
+  .btn-ghost{border:1px solid rgba(246,242,233,.4);color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--brass-soft);color:var(--brass-soft);transform:translateY(-2px);}
+  .btn .arr{transition:transform .25s var(--ease);}
+  .btn:hover .arr{transform:translateX(4px);}
+  .hero-mini{display:flex;flex-wrap:wrap;gap:0;margin-top:54px;border-top:1px solid rgba(246,242,233,.18);}
+  .hero-mini div{padding:20px 30px 26px 0;margin-right:30px;border-right:1px solid rgba(246,242,233,.14);}
+  .hero-mini div:last-child{border-right:0;}
+  .hero-mini .n{font-family:"Cormorant Garamond",serif;font-size:1.9rem;font-weight:600;color:var(--brass-soft);line-height:1;}
+  .hero-mini .l{font-size:.85rem;color:rgba(246,242,233,.7);margin-top:8px;letter-spacing:.04em;}
+  .redbuilding{align-self:end;justify-self:end;width:100%;max-width:430px;opacity:.96;}
+  .redbuilding .stroke{fill:none;stroke:var(--brick-soft);stroke-width:2;}
+  .redbuilding .fillb{fill:rgba(162,60,44,.16);}
+  .redbuilding .win{fill:rgba(196,152,63,.16);stroke:var(--brass);stroke-width:1.4;}
+  .redbuilding .base{fill:rgba(196,152,63,.10);stroke:var(--brass-soft);stroke-width:1.4;}
+  .hero-bottom{height:14px;}
+
+  /* 數據 */
+  .stats{background:var(--ink-2);color:var(--paper);padding:54px 0;}
+  .stats-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;}
+  .stat{text-align:center;padding:8px 6px;border-right:1px solid rgba(246,242,233,.1);}
+  .stat:last-child{border-right:0;}
+  .stat .num{font-family:"Cormorant Garamond",serif;font-size:2.9rem;font-weight:600;color:var(--brass-soft);line-height:1;}
+  .stat .cap{font-size:.9rem;color:rgba(246,242,233,.72);margin-top:10px;}
+
+  /* section 基礎 */
+  .section{padding:96px 0;}
+  .section-paper{background:var(--paper);}
+  .section-paper-2{background:var(--paper-2);}
+  .section-ink{background:var(--ink);color:var(--paper);}
+  .section-ink .sec-title,.section-ink h2,.section-ink h3{color:#fff;}
+  .section-ink .sec-sub{color:rgba(246,242,233,.78);}
+  .sec-head{max-width:48em;margin-bottom:56px;}
+  .sec-title{font-size:clamp(2rem,4vw,2.9rem);font-weight:900;color:var(--ink);margin:16px 0 0;letter-spacing:.01em;}
+  .sec-sub{margin-top:18px;font-size:1.08rem;color:var(--muted);font-weight:300;}
+
+  /* 優勢 */
+  .adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .adv{background:var(--cloud);padding:38px 32px;position:relative;transition:background .3s var(--ease),transform .3s var(--ease);}
+  .adv:hover{background:#fff;transform:translateY(-3px);}
+  .adv .idx{font-family:"Cormorant Garamond",serif;font-size:1rem;color:var(--brick);letter-spacing:.1em;}
+  .adv h3{font-size:1.32rem;color:var(--ink);margin:14px 0 12px;}
+  .adv p{font-size:.99rem;color:var(--muted);}
+  .adv::before{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--brick);transition:width .35s var(--ease);}
+  .adv:hover::before{width:100%;}
+
+  /* 強項系所 */
+  .flag-list{display:grid;gap:22px;}
+  .flag{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:start;background:rgba(255,255,255,.04);border:1px solid rgba(246,242,233,.14);padding:32px 36px;border-radius:3px;transition:border-color .3s var(--ease),background .3s var(--ease);}
+  .flag:hover{border-color:var(--brass);background:rgba(196,152,63,.06);}
+  .flag .mark{font-family:"Noto Serif TC",serif;font-size:2rem;font-weight:900;color:var(--brass-soft);line-height:1;min-width:42px;}
+  .flag .body h3{font-size:1.42rem;color:#fff;margin-bottom:6px;}
+  .flag .body .tag{display:inline-block;font-size:.8rem;letter-spacing:.08em;color:var(--brick-soft);border:1px solid rgba(196,102,79,.5);padding:3px 11px;border-radius:999px;margin-bottom:14px;}
+  .flag .body p{color:rgba(246,242,233,.8);font-size:1.02rem;font-weight:300;}
+
+  /* 獲獎榮譽 */
+  .award-top{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:30px;}
+  .award-hl{background:var(--ink);color:var(--paper);border-radius:4px;padding:34px 30px;position:relative;overflow:hidden;}
+  .award-hl::after{content:"";position:absolute;right:-20px;bottom:-20px;width:90px;height:90px;border:2px solid rgba(196,152,63,.25);border-radius:50%;}
+  .award-hl .big{font-family:"Cormorant Garamond",serif;font-size:2.6rem;font-weight:600;color:var(--brass-soft);line-height:1.05;}
+  .award-hl .lbl{margin-top:12px;font-size:1.02rem;color:#fff;font-weight:500;}
+  .award-hl .src{margin-top:6px;font-size:.84rem;color:rgba(246,242,233,.62);}
+  .award-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .award{display:flex;gap:14px;align-items:flex-start;background:var(--cloud);border:1px solid var(--line);border-radius:3px;padding:18px 20px;transition:transform .25s var(--ease),border-color .25s var(--ease);}
+  .award:hover{transform:translateX(4px);border-color:var(--brass);}
+  .award .yr{font-family:"Cormorant Garamond",serif;font-weight:600;color:var(--brick);font-size:1.05rem;min-width:42px;}
+  .award .t{font-size:.98rem;color:var(--ink-text);}
+  .award-src{margin-top:24px;font-size:.86rem;color:var(--muted);}
+
+  /* 學院 explorer */
+  .explorer{display:grid;grid-template-columns:268px 1fr;gap:0;border:1px solid var(--line);background:var(--cloud);}
+  .tablist{display:flex;flex-direction:column;border-right:1px solid var(--line);}
+  .tab{text-align:left;background:none;border:0;cursor:pointer;padding:20px 26px;font-family:"Noto Serif TC",serif;font-size:1.1rem;font-weight:500;color:var(--ink-text);border-bottom:1px solid var(--line);border-left:3px solid transparent;transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);display:flex;justify-content:space-between;align-items:center;gap:10px;}
+  .tab:last-child{border-bottom:0;}
+  .tab .cnt{font-family:"Cormorant Garamond",serif;font-size:1rem;color:var(--muted);}
+  .tab:hover{background:var(--paper-2);}
+  .tab[aria-selected="true"]{background:var(--ink);color:#fff;border-left-color:var(--brick);}
+  .tab[aria-selected="true"] .cnt{color:var(--brass-soft);}
+  .panel{padding:40px 42px;display:none;animation:fade .4s var(--ease);}
+  .panel.show{display:block;}
+  .panel .p-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px;flex-wrap:wrap;}
+  .panel .p-head h3{font-size:1.6rem;color:var(--ink);}
+  .panel .p-head .en{font-family:"Cormorant Garamond",serif;font-size:1.02rem;color:var(--brick);letter-spacing:.04em;}
+  .panel .p-note{color:var(--muted);font-size:.96rem;margin-bottom:24px;}
+  .dept-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .dept{padding:16px 18px;background:var(--paper);border:1px solid var(--line);border-radius:2px;transition:transform .25s var(--ease),border-color .25s var(--ease),background .25s var(--ease);}
+  .dept:hover{transform:translateY(-2px);border-color:var(--brick);background:#fff;}
+  .dept .d-name{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);font-size:1.04rem;}
+  .dept .d-name .dot{width:7px;height:7px;border-radius:50%;background:var(--brick);flex:none;}
+  .dept .d-desc{margin-top:6px;margin-left:17px;font-size:.88rem;color:var(--muted);line-height:1.6;}
+  .explorer-foot{margin-top:18px;font-size:.92rem;color:var(--muted);}
+  .explorer-foot a{color:var(--brick);text-decoration:underline;}
+
+  /* 師資力量 */
+  .fac-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;}
+  .fac-text .eyebrow{margin-bottom:14px;}
+  .fac-text h2{font-size:clamp(1.9rem,3.6vw,2.6rem);}
+  .fac-text p{margin-top:18px;color:rgba(246,242,233,.82);font-weight:300;font-size:1.05rem;}
+  .fac-points{margin-top:24px;display:grid;gap:14px;}
+  .fac-points li{list-style:none;display:flex;gap:12px;align-items:flex-start;color:rgba(246,242,233,.88);font-size:1rem;}
+  .fac-points li::before{content:"";width:8px;height:8px;margin-top:9px;flex:none;background:var(--brick-soft);border-radius:1px;transform:rotate(45deg);}
+  .fac-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .fac-card{background:rgba(255,255,255,.05);border:1px solid rgba(246,242,233,.16);border-radius:4px;padding:26px 22px;text-align:center;}
+  .fac-card .n{font-family:"Cormorant Garamond",serif;font-size:2.4rem;font-weight:600;color:var(--brass-soft);line-height:1;}
+  .fac-card .c{margin-top:10px;font-size:.92rem;color:rgba(246,242,233,.78);}
+
+  /* 僑外生 */
+  .intl-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px;}
+  .chip{background:var(--cloud);border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-weight:500;color:var(--ink);font-size:.96rem;transition:.25s var(--ease);}
+  .chip:hover{border-color:var(--brick);color:var(--brick);}
+  .chip.lead-chip{background:var(--brick);border-color:var(--brick);color:#fff;}
+  .intl-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:34px;}
+  .intl-card{background:var(--cloud);border:1px solid var(--line);border-radius:4px;padding:26px 22px;transition:transform .3s var(--ease),box-shadow .3s var(--ease);}
+  .intl-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px -22px rgba(21,35,61,.4);}
+  .intl-card .ic{width:42px;height:42px;border-radius:3px;display:grid;place-items:center;margin-bottom:14px;background:rgba(162,60,44,.1);color:var(--brick);}
+  .intl-card .ic svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;}
+  .intl-card h3{font-size:1.1rem;color:var(--ink);margin-bottom:8px;}
+  .intl-card p{font-size:.92rem;color:var(--muted);}
+  .intl-foot{display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:stretch;}
+  .intl-info{background:var(--ink);color:var(--paper);border-radius:4px;padding:30px 32px;}
+  .intl-info h4{color:#fff;font-size:1.15rem;margin-bottom:16px;}
+  .intl-info .row{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid rgba(246,242,233,.14);font-size:.95rem;}
+  .intl-info .row:last-child{border-bottom:0;}
+  .intl-info .row span:first-child{color:rgba(246,242,233,.72);}
+  .intl-info .row span:last-child{color:var(--brass-soft);font-weight:500;text-align:right;}
+  .intl-alumni{background:var(--cloud);border:1px solid var(--line);border-radius:4px;padding:30px 32px;}
+  .intl-alumni h4{color:var(--ink);font-size:1.15rem;margin-bottom:16px;}
+  .intl-alumni .al{display:flex;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px dashed var(--line);}
+  .intl-alumni .al:last-child{border-bottom:0;}
+  .intl-alumni .al .nm{font-weight:700;color:var(--ink);}
+  .intl-alumni .al .pl{font-size:.82rem;color:var(--brick);border:1px solid var(--line);padding:2px 9px;border-radius:999px;}
+  .intl-alumni .al .de{font-size:.88rem;color:var(--muted);}
+  .intl-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;}
+
+  /* 福利 */
+  .perk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .perk{background:var(--cloud);border:1px solid var(--line);border-radius:3px;padding:32px 28px;transition:transform .3s var(--ease),box-shadow .3s var(--ease);}
+  .perk:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(21,35,61,.4);}
+  .perk .ic{width:46px;height:46px;border-radius:3px;display:grid;place-items:center;margin-bottom:18px;background:rgba(162,60,44,.1);color:var(--brick);}
+  .perk .ic svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.8;}
+  .perk h3{font-size:1.18rem;color:var(--ink);margin-bottom:10px;}
+  .perk p{font-size:.97rem;color:var(--muted);}
+  .perk-note{margin-top:26px;font-size:.88rem;color:var(--muted);text-align:center;}
+
+  /* 校園 + 照片 */
+  .campus-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;margin-bottom:48px;}
+  .campus-text h2{font-size:clamp(1.9rem,3.6vw,2.7rem);}
+  .campus-text p{margin-top:20px;color:rgba(246,242,233,.82);font-weight:300;font-size:1.06rem;}
+  .campus-text .addr{margin-top:26px;padding-top:22px;border-top:1px solid rgba(246,242,233,.18);font-size:.96rem;color:rgba(246,242,233,.72);}
+  .campus-text .addr b{color:var(--brass-soft);font-weight:500;}
+  .campus-card{background:rgba(255,255,255,.04);border:1px solid rgba(246,242,233,.16);border-radius:4px;padding:40px;text-align:center;}
+  .campus-card svg{margin:0 auto 22px;width:200px;}
+  .campus-card .cap{font-family:"Noto Serif TC",serif;font-size:1.2rem;color:#fff;}
+  .campus-card .sub{font-size:.92rem;color:rgba(246,242,233,.7);margin-top:8px;}
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .shot{position:relative;aspect-ratio:4/3;border-radius:4px;overflow:hidden;border:1px solid rgba(246,242,233,.16);background:linear-gradient(135deg,#26344f,#1a2740);}
+  .shot img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);}
+  .shot:hover img{transform:scale(1.06);}
+  .shot .cap{position:absolute;left:0;right:0;bottom:0;padding:20px 16px 12px;font-size:.92rem;font-weight:500;color:#fff;background:linear-gradient(transparent,rgba(14,24,41,.85));z-index:2;}
+  .shot .ph{position:absolute;inset:0;display:grid;place-items:center;color:rgba(224,189,114,.5);font-family:"Cormorant Garamond",serif;letter-spacing:.1em;}
+  .gallery-note{margin-top:18px;font-size:.86rem;color:rgba(246,242,233,.6);}
+
+  /* 最新動態 */
+  .news-list{display:grid;gap:0;border-top:1px solid var(--line);}
+  .news{display:grid;grid-template-columns:140px 1fr auto;gap:26px;align-items:center;padding:26px 6px;border-bottom:1px solid var(--line);transition:background .25s var(--ease);}
+  .news:hover{background:var(--cloud);}
+  .news time{font-family:"Cormorant Garamond",serif;font-size:1.25rem;color:var(--brick);font-weight:600;}
+  .news .txt{font-size:1.05rem;color:var(--ink-text);}
+  .news .pill{font-size:.78rem;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line);padding:4px 12px;border-radius:999px;white-space:nowrap;}
+
+  /* CTA / footer */
+  .cta{background:linear-gradient(120% 140% at 0% 0%,var(--brick) 0%,#7d2c20 55%,var(--ink) 100%);color:var(--paper);padding:90px 0;text-align:center;}
+  .cta h2{font-size:clamp(2rem,4.4vw,3.2rem);color:#fff;}
+  .cta p{max-width:34em;margin:20px auto 0;color:rgba(246,242,233,.86);font-weight:300;font-size:1.1rem;}
+  .cta-btns{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:38px;}
+  .cta .btn-primary{background:#fff;color:var(--brick);}
+  .cta .btn-primary:hover{background:var(--paper);}
+  .cta .btn-ghost{border-color:rgba(255,255,255,.5);}
+  .cta .btn-ghost:hover{border-color:#fff;color:#fff;}
+  footer.foot{background:var(--ink-2);color:rgba(246,242,233,.66);padding:42px 0;font-size:.9rem;}
+  .foot-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:center;}
+  .foot img.logo-d{height:40px;margin-bottom:12px;}
+  .foot .addr{color:rgba(246,242,233,.66);}
+  .foot a{color:var(--brass-soft);}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+  .reveal.in{opacity:1;transform:none;}
+  @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+  @media(max-width:980px){
+    .nav-links{display:none;}
+    .hamburger{display:block;}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--paper);padding:18px 28px 26px;border-bottom:1px solid var(--line);gap:6px;align-items:stretch;}
+    .nav-links.open a{padding:12px 0;border-bottom:1px solid var(--line);}
+    .hero-grid{grid-template-columns:1fr;}
+    .redbuilding{display:none;}
+    .fac-grid{grid-template-columns:1fr;gap:34px;}
+    .intl-foot{grid-template-columns:1fr;}
+  }
+  @media(max-width:860px){
+    .stats-grid{grid-template-columns:repeat(3,1fr);gap:28px 12px;}
+    .stat:nth-child(3){border-right:0;}
+    .adv-grid{grid-template-columns:repeat(2,1fr);}
+    .award-top{grid-template-columns:1fr;}
+    .explorer{grid-template-columns:1fr;}
+    .tablist{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);}
+    .tab{border-bottom:0;border-right:1px solid var(--line);white-space:nowrap;border-left:0;border-top:3px solid transparent;}
+    .tab[aria-selected="true"]{border-left-color:transparent;border-top-color:var(--brick);}
+    .perk-grid{grid-template-columns:repeat(2,1fr);}
+    .intl-cards{grid-template-columns:repeat(2,1fr);}
+    .campus-grid{grid-template-columns:1fr;gap:34px;}
+    .dept-grid{grid-template-columns:1fr;}
+    .award-list{grid-template-columns:1fr;}
+    .gallery{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:560px){
+    .section{padding:64px 0;}
+    .adv-grid,.perk-grid,.intl-cards,.fac-cards{grid-template-columns:1fr;}
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
+    .stat{border-right:0;}
+    .news{grid-template-columns:1fr;gap:8px;padding:22px 4px;}
+    .news .pill{justify-self:start;}
+    .hero-mini div{padding-right:18px;margin-right:18px;}
+    .flag{grid-template-columns:1fr;gap:12px;}
+    .gallery{grid-template-columns:1fr;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important;}
+    .reveal{opacity:1!important;transform:none!important;transition:none!important;}
+    .panel{animation:none;}
+    .shot:hover img{transform:none;}
+  }
+  :focus-visible{outline:3px solid var(--brass);outline-offset:3px;border-radius:2px;}
+
+  /* 校園影片 */
+  .video-feature{margin-bottom:46px;}
+  .video-frame{position:relative;width:100%;max-width:880px;margin:0 auto;aspect-ratio:16/9;border-radius:6px;overflow:hidden;border:1px solid var(--line);box-shadow:0 26px 64px -32px rgba(21,35,61,.55);background:#0c1626;}
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;}
+  .video-cap{max-width:880px;margin:14px auto 0;text-align:center;font-size:.92rem;color:var(--muted);}
+  .news-h{font-size:1.4rem;color:var(--ink);margin:0 0 14px;}
+  .news-edit-note{margin-top:20px;font-size:.86rem;color:var(--muted);}
+  @supports not (aspect-ratio:1/1){.video-frame{height:0;padding-bottom:56.25%;}}
+
+  /* ===== UI 優化 ===== */
+  html{scroll-padding-top:88px;}
+  .hero{padding-bottom:72px;}
+  ::selection{background:rgba(162,60,44,.9);color:#fff;}
+  *{scrollbar-width:thin;scrollbar-color:var(--brick) transparent;}
+  ::-webkit-scrollbar{width:11px;height:11px;}
+  ::-webkit-scrollbar-thumb{background:var(--brick);border-radius:99px;border:3px solid var(--paper);}
+  ::-webkit-scrollbar-thumb:hover{background:var(--brick-soft);}
+  ::-webkit-scrollbar-track{background:transparent;}
+
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--brick),var(--brass));transition:width .12s linear;}
+
+  header.nav{transition:box-shadow .3s var(--ease),background .3s var(--ease);}
+  header.nav.scrolled{box-shadow:0 8px 26px -14px rgba(14,24,41,.45);background:rgba(246,242,233,.96);}
+
+  .hamburger span{transform-origin:center;transition:transform .3s var(--ease),opacity .2s var(--ease);}
+  .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  .scroll-cue{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:3;display:grid;place-items:center;width:42px;height:42px;border:1px solid rgba(246,242,233,.35);border-radius:50%;color:var(--brass-soft);animation:cueBounce 2.2s var(--ease) infinite;transition:border-color .25s var(--ease),color .25s var(--ease);}
+  .scroll-cue:hover{border-color:var(--brass-soft);color:#fff;}
+  .scroll-cue svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;}
+  @keyframes cueBounce{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,8px);}}
+
+  .redbuilding{animation:floatY 6s ease-in-out infinite;}
+  @keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+
+  .btn:active{transform:translateY(0) scale(.985);}
+
+  #toTop{position:fixed;right:26px;bottom:26px;z-index:55;width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;background:var(--ink);color:var(--paper);display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s var(--ease),transform .3s var(--ease),background .25s var(--ease);box-shadow:0 14px 32px -14px rgba(14,24,41,.6);}
+  #toTop.show{opacity:1;visibility:visible;transform:none;}
+  #toTop:hover{background:var(--brick);}
+  #toTop svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;}
+  @media(max-width:560px){#toTop{right:16px;bottom:16px;width:44px;height:44px;}}
+
+  @media(prefers-reduced-motion:reduce){
+    .scroll-cue,.redbuilding{animation:none!important;}
+    #progress{transition:none!important;}
+    #toTop{transition:opacity .2s linear!important;}
+  }
+  /* 學系卡片改為官方系網連結 */
+  a.dept{display:block;cursor:pointer;}
+  a.dept .d-name::after{content:"↗";margin-left:6px;font-size:.82em;color:var(--brick);opacity:0;transition:opacity .2s var(--ease);}
+  a.dept:hover .d-name::after{opacity:1;}
+
+  /* 近期亮點卡片升級 */
+  a.news{text-decoration:none;color:inherit;position:relative;grid-template-columns:92px 1fr auto;}
+  a.news::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--brick);transform:scaleY(0);transform-origin:top;transition:transform .3s var(--ease);}
+  a.news:hover{background:var(--cloud);}
+  a.news:hover::before{transform:scaleY(1);}
+  a.news:hover .news-arr{opacity:1;transform:translateX(0);}
+  .news .txt .dept-lbl{display:block;font-size:.82rem;color:var(--brick);letter-spacing:.03em;margin-bottom:5px;font-weight:500;}
+  .news .meta{display:flex;align-items:center;gap:8px;white-space:nowrap;}
+  .news-arr{color:var(--brick);opacity:0;transform:translateX(-4px);transition:opacity .25s var(--ease),transform .25s var(--ease);font-size:1.1rem;font-weight:700;}
+  .pill.intl{border-color:var(--brick);color:var(--brick);background:rgba(162,60,44,.06);font-weight:500;}
+  @media(max-width:680px){a.news{grid-template-columns:1fr;}.news .meta{justify-self:start;}}
+
+  /* 亮點縮圖 */
+  a.news{grid-template-columns:132px 86px 1fr auto;}
+  .news-thumb{width:132px;height:88px;border-radius:4px;overflow:hidden;border:1px solid var(--line);background:var(--paper-2);}
+  .news-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s var(--ease);}
+  a.news:hover .news-thumb img{transform:scale(1.06);}
+  @media(max-width:920px){a.news{grid-template-columns:110px 1fr auto;}a.news time{display:none;}}
+  @media(max-width:680px){a.news{grid-template-columns:1fr;}a.news time{display:block;}.news-thumb{width:100%;height:150px;}}
+
+  /* ===== 僑外校友輪播 ===== */
+  .alu-car{position:relative;overflow:hidden;}
+  .alu-track{display:flex;transition:transform .5s var(--ease);}
+  .alu-slide{min-width:100%;margin:0;padding:14px 4px 4px;}
+  .alu-badge{display:inline-block;font-size:.8rem;color:var(--brick);border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin-bottom:10px;}
+  .alu-name{font-family:"Noto Serif TC",serif;font-weight:900;font-size:1.5rem;color:var(--ink);}
+  .alu-deed{margin-top:8px;color:var(--muted);font-size:.95rem;min-height:3em;}
+  .alu-nav{display:flex;align-items:center;justify-content:space-between;margin-top:14px;}
+  .alu-btn{background:none;border:1px solid var(--line);border-radius:50%;width:34px;height:34px;cursor:pointer;color:var(--ink);display:grid;place-items:center;font-size:1.1rem;line-height:1;transition:border-color .25s var(--ease),color .25s var(--ease),transform .2s var(--ease);}
+  .alu-btn:hover{border-color:var(--brick);color:var(--brick);}
+  .alu-btn:active{transform:scale(.92);}
+  .alu-dots{display:flex;gap:8px;}
+  .alu-dot{width:8px;height:8px;border-radius:99px;background:var(--line);border:0;cursor:pointer;padding:0;transition:all .3s var(--ease);}
+  .alu-dot.on{background:var(--brick);width:22px;}
+
+  /* 特色科系 chips 可點擊 */
+  a.chip{display:inline-block;}
+  a.chip::after{content:" ↗";font-size:.8em;color:var(--brick);opacity:0;transition:opacity .2s var(--ease);}
+  a.chip:hover{transform:translateY(-2px);}
+  a.chip:hover::after{opacity:1;}
+
+  /* ===== Mobile 細節優化 ===== */
+  .tablist{scrollbar-width:none;}
+  .tablist::-webkit-scrollbar{display:none;}
+  @media(max-width:980px){
+    .scroll-cue{display:none;}
+  }
+  @media(max-width:860px){
+    .tablist{-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;}
+    .tab{scroll-snap-align:start;}
+  }
+  @media(max-width:560px){
+    .wrap{padding:0 20px;}
+    .hero{padding-top:64px;}
+    .hero-mini{display:grid;grid-template-columns:1fr 1fr;}
+    .hero-mini div{margin:0;padding:16px 12px 16px 0;border-right:0;border-bottom:1px solid rgba(246,242,233,.12);}
+    .hero-mini div:nth-child(odd){border-right:1px solid rgba(246,242,233,.12);}
+    .hero-mini div:nth-last-child(-n+2){border-bottom:0;}
+    .brand img.logo{height:34px;}
+    .nav-cta{padding:8px 12px;font-size:.8rem;}
+    .lang-toggle{padding:4px 9px;font-size:.85rem;}
+    .sec-head{margin-bottom:36px;}
+    .panel{padding:28px 22px;}
+    .award-hl{padding:26px 22px;}
+    .intl-info{padding:24px 20px;}
+    .intl-alumni{padding:24px 20px;}
+    .intl-info .row{flex-wrap:wrap;}
+    .intl-info .row span:last-child{text-align:left;}
+    .foot-inner{flex-direction:column;text-align:center;}
+    .foot img.logo-d{margin:0 auto 12px;}
+    .video-frame{border-radius:4px;}
+    .cta{padding:64px 0;}
+    .btn{padding:12px 20px;font-size:.95rem;}
+  }
+</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+
+<!-- 導覽列 -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">
+      <img class="logo" src="https://www.nutn.edu.tw/images/logo%402x.png" alt="國立臺南大學校徽" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="zh" style="display:none">南大</span>
+      <span class="en">NUTN</span>
+    </a>
+    <div class="nav-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">關於南大</a>
+        <a href="#advantage">優勢</a>
+        <a href="#awards">獲獎榮譽</a>
+        <a href="#flagship">強項系所</a>
+        <a href="#colleges">學院系所</a>
+        <a href="#faculty">師資</a>
+        <a href="#intl">僑外生專區</a>
+        <a href="#benefits">福利</a>
+      </nav>
+      <a href="en.html" class="lang-toggle">EN</a>
+      <a href="https://admissions.nutn.edu.tw/Admissions/" target="_blank" rel="noopener" class="nav-cta">招生資訊</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="開啟選單" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero brickwork" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow on-dark">Since 1899 · 府城百年學府</span>
+        <h1>教育的起點<br><span class="accent">創新</span>的現在</h1>
+        <p class="lead">國立臺南大學發源於 1899 年「臺南師範學校」，是臺灣師資培育的開端。橫跨三個世紀，如今已是涵蓋教育、人文、理工、環境與生態、藝術、管理<strong>六大學院</strong>的精緻綜合大學。</p>
+        <div class="hero-cta">
+          <a href="#flagship" class="btn btn-primary">探索強項系所 <span class="arr">→</span></a>
+          <a href="https://admissions.nutn.edu.tw/Admissions/" target="_blank" rel="noopener" class="btn btn-ghost">前往招生資訊</a>
+        </div>
+        <div class="hero-mini">
+          <div><div class="n">1899</div><div class="l">創校年份</div></div>
+          <div><div class="n">6</div><div class="l">大學院</div></div>
+          <div><div class="n">21</div><div class="l">學系</div></div>
+          <div><div class="n">府城</div><div class="l">市區核心</div></div>
+        </div>
+      </div>
+      <svg class="redbuilding" viewBox="0 0 360 300" role="img" aria-label="紅樓建築意象">
+        <polygon class="stroke" points="30,96 180,40 330,96"/>
+        <line class="stroke" x1="30" y1="96" x2="330" y2="96"/>
+        <rect class="fillb" x="46" y="96" width="268" height="168"/>
+        <rect class="stroke" x="46" y="96" width="268" height="168"/>
+        <line class="stroke" x1="46" y1="152" x2="314" y2="152"/>
+        <line class="stroke" x1="46" y1="208" x2="314" y2="208"/>
+        <path class="win" d="M70 146 v-26 a12 12 0 0 1 24 0 v26 z"/>
+        <path class="win" d="M110 146 v-26 a12 12 0 0 1 24 0 v26 z"/>
+        <path class="win" d="M168 146 v-26 a12 12 0 0 1 24 0 v26 z"/>
+        <path class="win" d="M226 146 v-26 a12 12 0 0 1 24 0 v26 z"/>
+        <path class="win" d="M266 146 v-26 a12 12 0 0 1 24 0 v26 z"/>
+        <rect class="win" x="70" y="166" width="24" height="34"/>
+        <rect class="win" x="110" y="166" width="24" height="34"/>
+        <rect class="win" x="168" y="166" width="24" height="34"/>
+        <rect class="win" x="226" y="166" width="24" height="34"/>
+        <rect class="win" x="266" y="166" width="24" height="34"/>
+        <rect class="base" x="70" y="222" width="24" height="42"/>
+        <rect class="base" x="110" y="222" width="24" height="42"/>
+        <path class="base" d="M156 264 v-30 a24 24 0 0 1 48 0 v30 z"/>
+        <rect class="base" x="226" y="222" width="24" height="42"/>
+        <rect class="base" x="266" y="222" width="24" height="42"/>
+        <line class="stroke" x1="40" y1="264" x2="320" y2="264"/>
+        <line class="stroke" x1="50" y1="276" x2="310" y2="276"/>
+      </svg>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#about" aria-label="向下捲動"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+  <div class="brick-course hero-bottom" aria-hidden="true"></div>
+</section>
+
+<!-- 數據 -->
+<section class="stats" id="about" aria-label="學校關鍵數據">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="num" data-target="127">0</div><div class="cap">年校史傳承</div></div>
+    <div class="stat"><div class="num" data-target="6">0</div><div class="cap">大學院</div></div>
+    <div class="stat"><div class="num" data-target="21">0</div><div class="cap">學系</div></div>
+    <div class="stat"><div class="num" data-target="6500" data-suffix="+" data-comma="1">0</div><div class="cap">在學學生</div></div>
+    <div class="stat"><div class="num" data-target="250" data-suffix="+">0</div><div class="cap">專任教師</div></div>
+    <div class="stat"><div class="num" data-target="3">0</div><div class="cap">橫跨世紀</div></div>
+  </div>
+</section>
+
+<!-- 優勢 -->
+<section class="section section-paper" id="advantage">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Why NUTN</span>
+      <h2 class="sec-title">為什麼選擇南大</h2>
+      <p class="sec-sub">百年師範底蘊與現代綜合大學的視野在此交會。南大以親民的成本、精緻的規模與跨域的能量，給你紮實又自由的學習舞台。</p>
+    </div>
+    <div class="adv-grid reveal">
+      <div class="adv"><span class="idx">01</span><h3>百年師範底蘊</h3><p>從臺灣第一所師範學校起家，教育、特殊教育與藝術領域累積逾百年的深厚資源與業界口碑，是其他校院難以複製的根基。</p></div>
+      <div class="adv"><span class="idx">02</span><h3>國立優質平價</h3><p>國立大學學費約每年新臺幣六萬元，遠低於私立校院，讓你以親民的成本，享受高品質的師資與教學環境。</p></div>
+      <div class="adv"><span class="idx">03</span><h3>精緻綜合大學</h3><p>全校約六千餘名學生、逾兩百位專任教師，師生比理想，教授看得見每一位學生，互動緊密、照顧到位。</p></div>
+      <div class="adv"><span class="idx">04</span><h3>六院跨域整合</h3><p>教育 × 科技 × 藝術 × 管理，六大學院並立。跨領域學程、輔系與雙主修，讓你的學習不被單一框架限制。</p></div>
+      <div class="adv"><span class="idx">05</span><h3>府城文化沃土</h3><p>坐落臺南市中西區，臺灣最古老的文化古都。人文薈萃、美食林立，生活機能與居住成本俱佳，讀書生活兩相宜。</p></div>
+      <div class="adv"><span class="idx">06</span><h3>五力人才培育</h3><p>以道德力、自學力、創造力、溝通力、就業力為核心，「拔尖卓越、特色領航」，培養面向未來的全人。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 獲獎榮譽 -->
+<section class="section section-paper-2" id="awards">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Honors &amp; Rankings</span>
+      <h2 class="sec-title">看得見的肯定</h2>
+      <p class="sec-sub">從國際排名到國內評比，南大的辦學品質與研究能量持續獲得肯定。以下為近年具代表性的榮譽。</p>
+    </div>
+    <div class="award-top reveal">
+      <div class="award-hl">
+        <div class="big">全國第一</div>
+        <div class="lbl">師均智慧財產衍生運用總金額</div>
+        <div class="src">2024《遠見》大學排行</div>
+      </div>
+      <div class="award-hl">
+        <div class="big">前 30 強</div>
+        <div class="lbl">全國綜合大學 / 全國公立大學</div>
+        <div class="src">2024《遠見》大學排行</div>
+      </div>
+      <div class="award-hl">
+        <div class="big">201–250</div>
+        <div class="lbl">亞洲大學排名（世界 801–1000）</div>
+        <div class="src">泰晤士高等教育 THE 2018</div>
+      </div>
+    </div>
+    <div class="award-list reveal">
+      <div class="award"><span class="yr">2024</span><span class="t">《遠見》全國中小型大學前 10 強</span></div>
+      <div class="award"><span class="yr">2024</span><span class="t">《遠見》南部大學前 10 強</span></div>
+      <div class="award"><span class="yr">2024</span><span class="t">《遠見》公立大學最佳進步獎</span></div>
+      <div class="award"><span class="yr">2024</span><span class="t">《遠見》大學社會責任獎 綠色校園組 楷模獎</span></div>
+      <div class="award"><span class="yr">—</span><span class="t">教育部政府服務品質優等獎</span></div>
+      <div class="award"><span class="yr">—</span><span class="t">機關檔案管理金檔獎</span></div>
+      <div class="award"><span class="yr">—</span><span class="t">大學校務評鑑全數通過</span></div>
+      <div class="award"><span class="yr">—</span><span class="t">師資培育評鑑四類學程全數通過</span></div>
+    </div>
+    <p class="award-src reveal">＊資料來源：《遠見》雜誌大學排行、泰晤士高等教育（THE）、教育部與本校公開資訊。最新榮譽請以官方公告為準。</p>
+  </div>
+</section>
+
+<!-- 強項系所 -->
+<section class="section section-ink brickwork" id="flagship">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow on-dark">Flagship Programs</span>
+      <h2 class="sec-title">領航全國的強項系所</h2>
+      <p class="sec-sub">這些系所是南大最具代表性的招牌——有的承繼百年師範傳統，有的站在教育科技與永續產業的最前線。</p>
+    </div>
+    <div class="flag-list reveal">
+      <div class="flag"><div class="mark">教</div><div class="body"><span class="tag">教育學院</span><h3>教育學系</h3><p>南大立校根基與師資培育旗艦。學士到博士完整學制，涵蓋課程與教學、教育經營與管理、教育數位評量與數據分析、教學科技等領域，是培育教育專業人才的全國重鎮。</p></div></div>
+      <div class="flag"><div class="mark">特</div><div class="body"><span class="tag">教育學院</span><h3>特殊教育學系</h3><p>全臺發展最完整的特教體系之一。設輔助科技碩士班，並與校內附屬啟聰學校緊密連結，提供其他學校難以企及的實務見習與實習場域。</p></div></div>
+      <div class="flag"><div class="mark">數</div><div class="body"><span class="tag">理工學院</span><h3>數位學習科技學系</h3><p>教育與科技的交會點。專注學習科技、數位教材設計、教育數據探勘與互動式學習，從學士、碩士到博士班一貫培育，輸出數位教育產業的即戰力。</p></div></div>
+      <div class="flag"><div class="mark">藝</div><div class="body"><span class="tag">藝術學院</span><h3>視覺藝術與設計・音樂・戲劇創作與應用學系</h3><p>承繼師範體系深厚的藝術涵養，三系並進。從視覺設計、音樂展演到劇場創作與應用，創作與舞台能量豐沛，是南臺灣重要的藝術人才搖籃。</p></div></div>
+      <div class="flag"><div class="mark">理</div><div class="body"><span class="tag">理工 × 環境與生態</span><h3>資訊工程學系・綠色能源科技學系</h3><p>對接 AI、資安與淨零永續趨勢的新銳系所。理論與產學並重，從軟硬體技術到綠能科技，培養掌握未來關鍵產業的工程人才。</p></div></div>
+      <div class="flag"><div class="mark">文</div><div class="body"><span class="tag">人文學院</span><h3>文化與自然資源・國語文・英語學系</h3><p>把文化古都當教室。文化觀光、臺灣研究、語文教學與跨文化溝通在府城場域中實踐，培養兼具在地視野與國際語言力的人文人才。</p></div></div>
+      <div class="flag"><div class="mark">管</div><div class="body"><span class="tag">管理學院</span><h3>經營與管理・行政管理學系</h3><p>2016 年成立的最年輕學院，整合企業經營、科技管理與公共行政，並設高階管理碩士在職專班（EMBA），銜接公私部門的管理人才需求。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 學院系所 explorer -->
+<section class="section section-paper" id="colleges">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Colleges &amp; Departments</span>
+      <h2 class="sec-title">六大學院，21 個學系</h2>
+      <p class="sec-sub">點選學院，瀏覽底下學系與各自的特色。從教育到藝術，從工程到管理，總有一條路通往你的興趣與未來。</p>
+    </div>
+    <div class="explorer reveal">
+      <div class="tablist" role="tablist" aria-label="學院列表">
+        <button class="tab" role="tab" aria-selected="true" data-tab="edu">教育學院 <span class="cnt">5</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="lib">人文學院 <span class="cnt">3</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="sci">理工學院 <span class="cnt">5</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="eco">環境與生態學院 <span class="cnt">3</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="art">藝術學院 <span class="cnt">3</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="mgt">管理學院 <span class="cnt">2</span></button>
+      </div>
+      <div class="panels">
+        <div class="panel show" data-panel="edu" role="tabpanel">
+          <div class="p-head"><h3>教育學院</h3><span class="en">College of Education</span></div>
+          <p class="p-note">南大的傳統強項與立校核心，師資培育與教育研究的全國重鎮。</p>
+          <div class="dept-grid">
+            <a class="dept" href="https://edu.nutn.edu.tw/gac610/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>教育學系</div><div class="d-desc">師資培育旗艦，學士到博士一貫，含教育數據分析與教學科技。</div></a>
+            <a class="dept" href="https://sped.nutn.edu.tw/sped/index.php" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>特殊教育學系</div><div class="d-desc">設輔助科技碩士班，連結附屬啟聰學校，實習資源獨步全臺。</div></a>
+            <a class="dept" href="https://ece.nutn.edu.tw/ece/index.php" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>幼兒教育學系</div><div class="d-desc">培育專業幼教師資，學理與現場實務並重。</div></a>
+            <a class="dept" href="https://phyedu.nutn.edu.tw/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>體育學系</div><div class="d-desc">運動教育與健康促進，南大海外招生特色科系。</div></a>
+            <a class="dept" href="https://cg.nutn.edu.tw/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>諮商與輔導學系</div><div class="d-desc">培育專業諮商與心理輔導人才，重視實務訓練。</div></a>
+          </div>
+        </div>
+        <div class="panel" data-panel="lib" role="tabpanel">
+          <div class="p-head"><h3>人文學院</h3><span class="en">College of Humanities</span></div>
+          <p class="p-note">深耕語文、文化與觀光，培養具人文素養與在地視野的人才。</p>
+          <div class="dept-grid">
+            <a class="dept" href="https://cnr.nutn.edu.tw/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>文化與自然資源學系</div><div class="d-desc">結合文化觀光與臺灣文化研究，連結在地與產業。</div></a>
+            <a class="dept" href="https://chinese.nutn.edu.tw/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>國語文學系</div><div class="d-desc">語文教學與應用，深耕中文素養與創作。</div></a>
+            <a class="dept" href="https://english.nutn.edu.tw/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>英語學系</div><div class="d-desc">強化英語能力與跨文化溝通，接軌國際。</div></a>
+          </div>
+        </div>
+        <div class="panel" data-panel="sci" role="tabpanel">
+          <div class="p-head"><h3>理工學院</h3><span class="en">Science &amp; Engineering</span></div>
+          <p class="p-note">結合電機、資訊、數學與材料，並以數位學習科技串接教育與科技。</p>
+          <div class="dept-grid">
+            <a class="dept" href="https://phpweb.nutn.edu.tw/mobileEE/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>電機工程學系</div><div class="d-desc">學碩博完整，涵蓋電機、光電與通訊工程。</div></a>
+            <a class="dept" href="https://math.nutn.edu.tw/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>應用數學系</div><div class="d-desc">數學理論扎實，延伸資料分析與計算應用。</div></a>
+            <a class="dept" href="https://phpweb2.nutn.edu.tw/ilt/wordpress/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>數位學習科技學系</div><div class="d-desc">學習科技、數位教材與教育數據探勘，跨域即戰力。</div></a>
+            <a class="dept" href="https://material.nutn.edu.tw/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>材料科學系</div><div class="d-desc">材料研發與應用技術，對接半導體與綠能產業。</div></a>
+            <a class="dept" href="https://csie.nutn.edu.tw/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>資訊工程學系</div><div class="d-desc">AI、軟體開發與資安實務，產學合作活躍。</div></a>
+          </div>
+        </div>
+        <div class="panel" data-panel="eco" role="tabpanel">
+          <div class="p-head"><h3>環境與生態學院</h3><span class="en">Environment &amp; Ecology</span></div>
+          <p class="p-note">聚焦生態保育、生物科技與綠色能源，呼應永續與淨零趨勢。</p>
+          <div class="dept-grid">
+            <a class="dept" href="https://ecosci.nutn.edu.tw/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>生態暨環境資源學系</div><div class="d-desc">生態保育與環境資源管理，重視田野與實作。</div></a>
+            <a class="dept" href="https://bst.nutn.edu.tw/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>生物科技學系</div><div class="d-desc">生物技術研發與應用，連結生醫與農業科技。</div></a>
+            <a class="dept" href="https://greenergy.nutn.edu.tw/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>綠色能源科技學系</div><div class="d-desc">綠能與淨零永續科技，搶占未來能源趨勢。</div></a>
+          </div>
+        </div>
+        <div class="panel" data-panel="art" role="tabpanel">
+          <div class="p-head"><h3>藝術學院</h3><span class="en">College of Arts</span></div>
+          <p class="p-note">承繼師範藝術傳統，音樂、視覺設計與劇場創作三足鼎立。</p>
+          <div class="dept-grid">
+            <a class="dept" href="https://music.nutn.edu.tw/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>音樂學系</div><div class="d-desc">音樂展演與教育並重，南大海外招生特色科系。</div></a>
+            <a class="dept" href="https://phpweb.nutn.edu.tw/www.fineart/WP/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>視覺藝術與設計學系</div><div class="d-desc">視覺創作與設計，培養藝術與設計實務能力。</div></a>
+            <a class="dept" href="https://drama.nutn.edu.tw/ch/index.asp" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>戲劇創作與應用學系</div><div class="d-desc">劇場創作與應用劇場，連結教育與社區。</div></a>
+          </div>
+        </div>
+        <div class="panel" data-panel="mgt" role="tabpanel">
+          <div class="p-head"><h3>管理學院</h3><span class="en">College of Management</span></div>
+          <p class="p-note">2016 年成立，整合經營管理與行政管理，培育跨域管理人才。</p>
+          <div class="dept-grid">
+            <a class="dept" href="https://bm.nutn.edu.tw/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>經營與管理學系</div><div class="d-desc">企業經營與科技管理，培養商管實戰能力。</div></a>
+            <a class="dept" href="https://pam.nutn.edu.tw/" target="_blank" rel="noopener"><div class="d-name"><span class="dot"></span>行政管理學系</div><div class="d-desc">公共行政與政策管理，銜接公部門與非營利組織。</div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="explorer-foot reveal">＊各學院另設多個碩士班、博士班、碩士在職專班及高階管理碩士在職專班（EMBA）。完整學制請參閱<a href="https://www.nutn.edu.tw/teaching.html" target="_blank" rel="noopener">官方教學單位頁面</a>。</p>
+  </div>
+</section>
+
+<!-- 師資力量 -->
+<section class="section section-ink" id="faculty">
+  <div class="wrap">
+    <div class="fac-grid">
+      <div class="fac-text reveal">
+        <span class="eyebrow on-dark">Faculty Strength</span>
+        <h2>看得見每位學生的師資陣容</h2>
+        <p>南大以「學生第一、教學為先」為理念，逾兩百位專任教師多具博士學位，在精緻的規模下維持理想的師生比，讓教學與研究都能照顧到每一位學生。</p>
+        <ul class="fac-points">
+          <li>六大學院院長皆為博士，學養深厚、帶領各領域穩健發展。</li>
+          <li>師均智慧財產衍生運用總金額榮獲 2024《遠見》全國第一，研究能量轉化亮眼。</li>
+          <li>附設實驗小學、附屬高中與附屬啟聰學校，提供師資生得天獨厚的實習與見習場域。</li>
+          <li>教學品質與學術研究並重，校務評鑑、師資培育評鑑全數通過。</li>
+        </ul>
+      </div>
+      <div class="fac-cards reveal">
+        <div class="fac-card"><div class="n">250+</div><div class="c">專任教師</div></div>
+        <div class="fac-card"><div class="n">6</div><div class="c">學院院長皆博士</div></div>
+        <div class="fac-card"><div class="n">3</div><div class="c">附屬學校實習場域</div></div>
+        <div class="fac-card"><div class="n">No.1</div><div class="c">師均智財衍生運用<br>全國第一（遠見）</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 僑外生專區 -->
+<section class="section section-paper" id="intl">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">International &amp; Overseas Students</span>
+      <h2 class="sec-title">僑外生的友善選擇</h2>
+      <p class="sec-sub">南大是臺南市唯一橫跨六大領域的綜合型國立大學，特別歡迎港澳僑生與國際學生。以下為海外招生的特色科系與專屬資源。</p>
+    </div>
+
+    <div class="intl-chips reveal">
+      <span class="chip lead-chip">海外招生特色科系</span>
+      <a class="chip" href="https://phyedu.nutn.edu.tw/" target="_blank" rel="noopener">體育學系</a>
+      <a class="chip" href="https://edu.nutn.edu.tw/gac610/" target="_blank" rel="noopener">教育學系</a>
+      <a class="chip" href="https://sped.nutn.edu.tw/sped/index.php" target="_blank" rel="noopener">特殊教育學系</a>
+      <a class="chip" href="https://ece.nutn.edu.tw/ece/index.php" target="_blank" rel="noopener">幼兒教育學系</a>
+      <a class="chip" href="https://music.nutn.edu.tw/" target="_blank" rel="noopener">音樂學系</a>
+      <a class="chip" href="https://fineart.nutn.edu.tw/" target="_blank" rel="noopener">視覺藝術與設計學系</a>
+      <a class="chip" href="https://drama.nutn.edu.tw/ch/index.asp" target="_blank" rel="noopener">戲劇創作與應用學系</a>
+    </div>
+
+    <div class="intl-cards reveal">
+      <div class="intl-card">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg></div>
+        <h3>免試修師培課程</h3>
+        <p>所有港澳僑學生皆可免考試，申請修習本校師資培育課程，圓夢成為老師。</p>
+      </div>
+      <div class="intl-card">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10M9 20v-6h6v6"/></svg></div>
+        <h3>保障 4 年住宿</h3>
+        <p>港澳僑生入學即保障 4 年校內住宿，安心就學、免去在外租屋的奔波。</p>
+      </div>
+      <div class="intl-card">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+        <h3>三大入學管道</h3>
+        <p>個人申請、聯合分發、單獨招生，透過海外聯合招生委員會多元入學。</p>
+      </div>
+      <div class="intl-card">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 8 5-3 5 3-2-8"/></svg></div>
+        <h3>多元獎助學金</h3>
+        <p>簽約學校學費全免或減半，另設境外學生入學助學金，減輕負擔。</p>
+      </div>
+    </div>
+
+    <div class="intl-foot reveal">
+      <div class="intl-info">
+        <h4>就學資訊一覽</h4>
+        <div class="row"><span>學雜費（依學院）</span><span>約 NTD 46,000–54,000／年</span></div>
+        <div class="row"><span>住宿費</span><span>約 NTD 16,800–20,000／年起</span></div>
+        <div class="row"><span>距臺南火車站</span><span>約 5 分鐘車程</span></div>
+        <div class="row"><span>距臺南高鐵站</span><span>約 23 分鐘車程</span></div>
+        <div class="row"><span>距臺南航空站</span><span>約 10 分鐘車程</span></div>
+      </div>
+      <div class="intl-alumni">
+        <h4>傑出僑外校友</h4>
+        <div class="alu-car" data-autoplay="5200">
+          <div class="alu-track">
+            <figure class="alu-slide"><span class="alu-badge">香港</span><div class="alu-name">高振聲</div><div class="alu-deed">台灣各大學香港校友會總會「品學兼優獎」得主，港生在南大的優秀典範。</div></figure>
+            <figure class="alu-slide"><span class="alu-badge">澳門</span><div class="alu-name">鍾志業</div><div class="alu-deed">投身劇場，參與創志戲劇社製作，將南大戲劇養分帶回澳門舞台。</div></figure>
+            <figure class="alu-slide"><span class="alu-badge">馬來西亞</span><div class="alu-name">魏福勝</div><div class="alu-deed">GHS 心理諮商所所長，將諮商輔導專業帶回馬來西亞服務社群。</div></figure>
+          </div>
+          <div class="alu-nav">
+            <button class="alu-btn alu-prev" aria-label="上一則">‹</button>
+            <div class="alu-dots" role="tablist" aria-label="校友輪播"></div>
+            <button class="alu-btn alu-next" aria-label="下一則">›</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="intl-links reveal">
+      <a href="https://www.overseas.edu.tw/school/nutn/" target="_blank" rel="noopener" class="btn btn-primary" style="background:var(--brick);">海外聯招會 · 南大專頁 →</a>
+      <a href="https://oia.nutn.edu.tw/" target="_blank" rel="noopener" class="btn" style="border:1px solid var(--line);color:var(--ink);">國際暨兩岸事務處</a>
+      <a href="https://admissions.nutn.edu.tw/OSSA/" target="_blank" rel="noopener" class="btn" style="border:1px solid var(--line);color:var(--ink);">境外生招生網</a>
+    </div>
+  </div>
+</section>
+
+<!-- 福利 -->
+<section class="section section-paper-2" id="benefits">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Student Benefits</span>
+      <h2 class="sec-title">讀南大，這些都是你的後盾</h2>
+      <p class="sec-sub">親民學費、住宿補貼、多元獎助與得天獨厚的實習資源，讓你把心思專注在學習與成長上。</p>
+    </div>
+    <div class="perk-grid reveal">
+      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 1v22M5 6h11a3 3 0 0 1 0 6H8a3 3 0 0 0 0 6h11"/></svg></div><h3>國立學費親民</h3><p>學士班學費約每年新臺幣六萬元，由國家補助，相較私立校院大幅降低家庭的經濟負擔。</p></div>
+      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10M9 20v-6h6v6"/></svg></div><h3>校內住宿補貼</h3><p>響應教育部住宿補貼方案，一般生每學期最高補貼 5,000 元、經濟弱勢最高 7,000 元；宿舍費約每年 16,800–20,000 元起。</p></div>
+      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 8 5-3 5 3-2-8"/></svg></div><h3>多元獎助學金</h3><p>書卷獎、校內各類獎助學金、弱勢助學與緊急紓困等多重支持，獎勵向學、不讓經濟成為阻礙。</p></div>
+      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v6M21 7v6M7 9v5a5 3 0 0 0 10 0V9"/></svg></div><h3>現成實習場域</h3><p>校內設有附設實驗小學、附屬高中與附屬啟聰學校，師資培育學生的見習與實習資源得天獨厚。</p></div>
+      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>雙校區生活便利</h3><p>府城校區（中西區）與榮譽校區（東區）皆緊鄰市區，交通便捷、生活機能完善、租金親民。</p></div>
+      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20V8l8-5 8 5v12M9 20v-5h6v5"/><path d="M9 11h6"/></svg></div><h3>全人就業力培育</h3><p>五力課程、教育學程與產學合作並進，從理論到實務銜接，協助你畢業即與職場接軌。</p></div>
+    </div>
+    <p class="perk-note reveal">＊各項學雜費、宿舍費與補助金額，依各學年度學校官方公告為準。</p>
+  </div>
+</section>
+
+<!-- 校園 / 府城 + 照片 -->
+<section class="section section-ink" id="campus">
+  <div class="wrap">
+    <div class="campus-grid">
+      <div class="campus-text reveal">
+        <span class="eyebrow on-dark">Heritage · Tainan</span>
+        <h2>紅樓．府城．百年弦歌</h2>
+        <p>校園中的「紅樓」建於 1922 年，為清水紅磚三層建築，是臺南市定古蹟「原臺南師範學校本館」。北牆刻意保留二戰空襲留下的彈孔牆，靜靜見證學校走過的歲月。</p>
+        <p>漫步府城校區，紅磚、老松與書聲交織。在臺灣最古老的文化古城裡讀書，是一種把歷史走成日常的幸福。</p>
+        <div class="addr">
+          <b>府城校區</b>　臺南市中西區樹林街二段 33 號<br>
+          <b>榮譽校區</b>　臺南市東區榮譽街 67 號
+        </div>
+      </div>
+      <div class="campus-card reveal">
+        <svg viewBox="0 0 240 180" role="img" aria-label="紅樓古蹟意象">
+          <polygon points="20,64 120,28 220,64" fill="none" stroke="var(--brick-soft)" stroke-width="2"/>
+          <rect x="32" y="64" width="176" height="104" fill="rgba(162,60,44,.18)" stroke="var(--brick-soft)" stroke-width="2"/>
+          <line x1="32" y1="100" x2="208" y2="100" stroke="var(--brass-soft)" stroke-width="1.3"/>
+          <line x1="32" y1="134" x2="208" y2="134" stroke="var(--brass-soft)" stroke-width="1.3"/>
+          <path d="M52 96 v-18 a8 8 0 0 1 16 0 v18 z" fill="rgba(196,152,63,.18)" stroke="var(--brass)" stroke-width="1.2"/>
+          <path d="M112 96 v-18 a8 8 0 0 1 16 0 v18 z" fill="rgba(196,152,63,.18)" stroke="var(--brass)" stroke-width="1.2"/>
+          <path d="M172 96 v-18 a8 8 0 0 1 16 0 v18 z" fill="rgba(196,152,63,.18)" stroke="var(--brass)" stroke-width="1.2"/>
+          <rect x="52" y="108" width="16" height="22" fill="rgba(196,152,63,.18)" stroke="var(--brass)" stroke-width="1.2"/>
+          <rect x="112" y="108" width="16" height="22" fill="rgba(196,152,63,.18)" stroke="var(--brass)" stroke-width="1.2"/>
+          <rect x="172" y="108" width="16" height="22" fill="rgba(196,152,63,.18)" stroke="var(--brass)" stroke-width="1.2"/>
+          <path d="M104 168 v-22 a16 16 0 0 1 32 0 v22 z" fill="rgba(196,152,63,.12)" stroke="var(--brass-soft)" stroke-width="1.2"/>
+        </svg>
+        <div class="cap">紅樓 · 市定古蹟</div>
+        <div class="sub">原臺南師範學校本館，1922 年落成</div>
+      </div>
+    </div>
+
+    <!-- 校園照片：以下為官方校園照片，建議下載後改用自家伺服器路徑以確保穩定 -->
+    <div class="reveal">
+      <span class="eyebrow on-dark" style="margin-bottom:22px;">Campus Gallery · 校園剪影</span>
+      <div class="gallery">
+        <div class="shot"><div class="ph">紅樓</div><img src="https://www.overseas.edu.tw/wp-content/uploads/2020/10/NUTN_-Red-Building.jpg" alt="國立臺南大學紅樓" loading="lazy" onerror="this.style.display='none'"><div class="cap">紅樓古蹟</div></div>
+        <div class="shot"><div class="ph">校門</div><img src="https://www.overseas.edu.tw/wp-content/uploads/2020/10/NUTN_-Front-Door-2.jpg" alt="國立臺南大學校門" loading="lazy" onerror="this.style.display='none'"><div class="cap">府城校區校門</div></div>
+        <div class="shot"><div class="ph">書藝展</div><img src="https://www.overseas.edu.tw/wp-content/uploads/2020/10/NUTN_Calligraphy-Exhibition.jpg" alt="國立臺南大學書法藝術展" loading="lazy" onerror="this.style.display='none'"><div class="cap">書法藝術展</div></div>
+        <div class="shot"><div class="ph">宿舍</div><img src="https://www.overseas.edu.tw/wp-content/uploads/2020/10/NUTN_Dormitory.jpg" alt="國立臺南大學學生宿舍" loading="lazy" onerror="this.style.display='none'"><div class="cap">學生宿舍</div></div>
+      </div>
+      <p class="gallery-note">＊校園照片為示意，建議替換為宣傳組拍攝或學校官方授權之高解析照片。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 校園影音與最新動態 -->
+<section class="section section-paper" id="news">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Campus Video &amp; Highlights</span>
+      <h2 class="sec-title">校園影音與最新動態</h2>
+      <p class="sec-sub">先看見南大的校園生活，再看教學與研究在競賽、發表與產學合作中的最新能量。</p>
+    </div>
+
+    <div class="video-feature reveal">
+      <div class="video-frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/pGwsy4W2eJI" title="國際學生在南大 Life in NUTN" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-cap">校園影片 ·〈國際學生在南大 Life in NUTN〉　來源：學校官方 YouTube 頻道 · <a href="https://www.youtube.com/watch?v=pGwsy4W2eJI" target="_blank" rel="noopener" style="color:var(--brick);text-decoration:underline;">在 YouTube 開啟</a></div>
+    </div>
+
+    <h3 class="news-h reveal">近期亮點</h3>
+    <div class="news-list reveal">
+      <a class="news" href="https://epaper.nutn.edu.tw/newsreport-detail/5921" target="_blank" rel="noopener">
+        <div class="news-thumb"><img src="https://epaper.nutn.edu.tw/img/catalog/news/5921/1.jpg" alt="亞洲接力錦標賽銅牌隊伍合影" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <time>2026.06</time>
+        <div class="txt"><span class="dept-lbl">體育學系</span>陳玟溥、賴柏翔同學代表中華隊出戰 2026 亞洲接力錦標賽，男子 4×100 公尺接力以 38 秒 41 勇奪銅牌，並打破高懸 7 年的全國紀錄。</div>
+        <div class="meta"><span class="pill intl">國際賽事</span><span class="news-arr">↗</span></div>
+      </a>
+      <a class="news" href="https://epaper.nutn.edu.tw/newsreport-detail/5884" target="_blank" rel="noopener">
+        <div class="news-thumb"><img src="https://epaper.nutn.edu.tw/img/catalog/news/5884/1.jpg" alt="陳玟溥同學與田徑隊教練合影" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <time>2026.06</time>
+        <div class="txt"><span class="dept-lbl">體育學系</span>陳玟溥同學於新北國際田徑公開賽男子 100 公尺決賽跑出 10 秒 18 勇奪冠軍，突破達標門檻，取得名古屋亞運參賽資格。</div>
+        <div class="meta"><span class="pill intl">國際賽事</span><span class="news-arr">↗</span></div>
+      </a>
+      <a class="news" href="https://campus.nutn.edu.tw/newsPost3/honorPost.aspx?board=24" target="_blank" rel="noopener">
+        <div class="news-thumb"><img src="images/hl-2.jpg" data-fb="https://commons.wikimedia.org/wiki/Special:FilePath/Steinway_concert_grand_piano_D-274.jpg?width=480" alt="音樂演奏" loading="lazy" onerror="if(!this.dataset.done){this.dataset.done=1;this.src=this.dataset.fb;}else{this.parentElement.style.display='none';}"></div>
+        <time>2026.04</time>
+        <div class="txt"><span class="dept-lbl">音樂學系</span>黃乾育老師原創專輯《白雲蒼狗：聲影流轉》榮獲美國「全球音樂獎 Global Music Awards」金獎。</div>
+        <div class="meta"><span class="pill intl">國際大獎</span><span class="news-arr">↗</span></div>
+      </a>
+      <a class="news" href="https://campus.nutn.edu.tw/newsPost3/honorPost.aspx?board=23" target="_blank" rel="noopener">
+        <div class="news-thumb"><img src="images/hl-3.jpg" data-fb="https://commons.wikimedia.org/wiki/Special:FilePath/Niaosong_Wetland_Park_in_Kaohsiung,_Taiwan.JPG?width=480" alt="臺灣濕地" loading="lazy" onerror="if(!this.dataset.done){this.dataset.done=1;this.src=this.dataset.fb;}else{this.parentElement.style.display='none';}"></div>
+        <time>2025.12</time>
+        <div class="txt"><span class="dept-lbl">生態暨環境資源學系</span>王通文同學於「2025 第35屆環境教育學術暨實務交流國際研討會」榮獲學術論文優勝論文獎。</div>
+        <div class="meta"><span class="pill intl">國際研討會</span><span class="news-arr">↗</span></div>
+      </a>
+      <a class="news" href="https://fineart.nutn.edu.tw/resultsview_64.html" target="_blank" rel="noopener">
+        <div class="news-thumb"><img src="images/hl-1.jpg" data-fb="https://commons.wikimedia.org/wiki/Special:FilePath/Shuttlecock_on_a_badminton_court.jpg?width=480" alt="羽球" loading="lazy" onerror="if(!this.dataset.done){this.dataset.done=1;this.src=this.dataset.fb;}else{this.parentElement.style.display='none';}"></div>
+        <time>2025.11</time>
+        <div class="txt"><span class="dept-lbl">視覺藝術與設計學系</span>劉浩恩同學榮獲 2025 東京聽障奧運（Deaflympics）羽球混合團體銅牌。</div>
+        <div class="meta"><span class="pill intl">國際賽事</span><span class="news-arr">↗</span></div>
+      </a>
+      <a class="news" href="https://campus.nutn.edu.tw/newsPost3/honorPost.aspx?board=23" target="_blank" rel="noopener">
+        <div class="news-thumb"><img src="images/hl-4.jpg" data-fb="https://commons.wikimedia.org/wiki/Special:FilePath/Lab_glassware.jpg?width=480" alt="實驗室" loading="lazy" onerror="if(!this.dataset.done){this.dataset.done=1;this.src=this.dataset.fb;}else{this.parentElement.style.display='none';}"></div>
+        <time>2025.11</time>
+        <div class="txt"><span class="dept-lbl">材料科學系</span>蕭伯耕同學於「2025 綠色電化學科技國際研討會 ICGET-Tw」海報競賽榮獲優等。</div>
+        <div class="meta"><span class="pill intl">國際研討會</span><span class="news-arr">↗</span></div>
+      </a>
+      <a class="news" href="https://fineart.nutn.edu.tw/resultsview_55.html" target="_blank" rel="noopener">
+        <div class="news-thumb"><img src="images/hl-5.jpg" data-fb="https://commons.wikimedia.org/wiki/Special:FilePath/Leathertools.jpg?width=480" alt="皮革工藝" loading="lazy" onerror="if(!this.dataset.done){this.dataset.done=1;this.src=this.dataset.fb;}else{this.parentElement.style.display='none';}"></div>
+        <time>2025.07</time>
+        <div class="txt"><span class="dept-lbl">視覺藝術與設計學系</span>蔡育恆同學榮獲日本 JLCA 第五屆國際皮革工藝競賽第三名。</div>
+        <div class="meta"><span class="pill intl">國際競賽</span><span class="news-arr">↗</span></div>
+      </a>
+    </div>
+    <p class="news-edit-note reveal">＊以上皆為真實榮譽，資料來源：<a href="https://campus.nutn.edu.tw/newsPost3/honorpost.aspx" target="_blank" rel="noopener" style="color:var(--brick);text-decoration:underline;">南大榮譽榜</a>（點擊每一則卡片即可前往查證）；縮圖為南大報導官方新聞照片，或 <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener" style="color:var(--brick);text-decoration:underline;">Wikimedia Commons</a> CC 授權示意圖。</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2>在府城，遇見你的未來</h2>
+    <p>想更認識國立臺南大學？歡迎參加教育展、預約校園參訪，或直接查詢最新招生資訊。</p>
+    <div class="cta-btns">
+      <a href="https://admissions.nutn.edu.tw/Admissions/" target="_blank" rel="noopener" class="btn btn-primary">招生與入學 →</a>
+      <a href="https://www.nutn.edu.tw/index-ch.html" target="_blank" rel="noopener" class="btn btn-ghost">認識南大</a>
+      <a href="https://www.nutn.edu.tw/" target="_blank" rel="noopener" class="btn btn-ghost">官方網站</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <div>
+      <img class="logo-d" src="https://www.nutn.edu.tw/images/logo-dark.png" alt="國立臺南大學" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="fb" style="display:none">國立臺南大學 National University of Tainan</div>
+      <div class="addr">700301 臺南市中西區樹林街二段 33 號　|　06-2133111</div>
+    </div>
+    <div>本網頁為教育展宣傳專案，校務資訊以<a href="https://www.nutn.edu.tw/" target="_blank" rel="noopener">官方網站</a>公告為準 · <a href="https://www.facebook.com/nutn.tw/" target="_blank" rel="noopener">官方 Facebook</a></div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到頂端"><svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button>
+
+<script>
+  const ham=document.getElementById('hamburger');
+  const links=document.getElementById('navLinks');
+  ham.addEventListener('click',()=>{const o=links.classList.toggle('open');ham.setAttribute('aria-expanded',o);});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');ham.setAttribute('aria-expanded',false);}));
+
+  const tabs=document.querySelectorAll('.tab');
+  const panels=document.querySelectorAll('.panel');
+  tabs.forEach(tab=>tab.addEventListener('click',()=>{
+    tabs.forEach(t=>t.setAttribute('aria-selected','false'));
+    tab.setAttribute('aria-selected','true');
+    const k=tab.dataset.tab;
+    panels.forEach(p=>p.classList.toggle('show',p.dataset.panel===k));
+  }));
+
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function animateNum(el){
+    const target=+el.dataset.target,suffix=el.dataset.suffix||'',comma=el.dataset.comma==='1',dur=1400,start=performance.now();
+    function tick(now){const t=Math.min((now-start)/dur,1),e=1-Math.pow(1-t,3);let v=Math.round(target*e);el.textContent=(comma?v.toLocaleString('en-US'):v)+suffix;if(t<1)requestAnimationFrame(tick);}
+    requestAnimationFrame(tick);
+  }
+  const numObs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){const el=e.target;if(reduce){const v=+el.dataset.target;el.textContent=(el.dataset.comma==='1'?v.toLocaleString('en-US'):v)+(el.dataset.suffix||'');}else{animateNum(el);}numObs.unobserve(el);}});},{threshold:.6});
+  document.querySelectorAll('.num').forEach(n=>numObs.observe(n));
+
+  const revObs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+  const sections=['about','advantage','awards','flagship','colleges','faculty','intl','benefits'];
+  const navMap={};
+  document.querySelectorAll('.nav-links a').forEach(a=>{navMap[a.getAttribute('href').slice(1)]=a;});
+  const secObs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){Object.values(navMap).forEach(a=>a.classList.remove('active'));const id=e.target.id;if(navMap[id])navMap[id].classList.add('active');}});},{rootMargin:'-45% 0px -50% 0px'});
+  sections.forEach(id=>{const el=document.getElementById(id);if(el)secObs.observe(el);});
+
+  // UI 優化：捲動進度條、導覽列陰影、回到頂端
+  const progressBar=document.getElementById('progress');
+  const navBar=document.querySelector('header.nav');
+  const toTopBtn=document.getElementById('toTop');
+  function onScrollUI(){
+    const st=window.scrollY||document.documentElement.scrollTop||0;
+    const h=document.documentElement.scrollHeight-window.innerHeight;
+    if(progressBar)progressBar.style.width=(h>0?(st/h*100):0)+'%';
+    if(navBar)navBar.classList.toggle('scrolled',st>10);
+    if(toTopBtn)toTopBtn.classList.toggle('show',st>600);
+  }
+  window.addEventListener('scroll',onScrollUI,{passive:true});
+  window.addEventListener('resize',onScrollUI,{passive:true});
+  onScrollUI();
+  if(toTopBtn)toTopBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  // 僑外校友輪播 / alumni carousel
+  document.querySelectorAll('.alu-car').forEach(car=>{
+    const track=car.querySelector('.alu-track');
+    const slides=[...track.children];
+    const dotsWrap=car.querySelector('.alu-dots');
+    let idx=0,timer=null;
+    slides.forEach((_,i)=>{const d=document.createElement('button');d.className='alu-dot'+(i===0?' on':'');d.setAttribute('aria-label','slide '+(i+1));d.addEventListener('click',()=>go(i,true));dotsWrap.appendChild(d);});
+    const dots=[...dotsWrap.children];
+    function go(i,user){idx=(i+slides.length)%slides.length;track.style.transform='translateX(-'+(idx*100)+'%)';dots.forEach((d,j)=>d.classList.toggle('on',j===idx));if(user)restart();}
+    car.querySelector('.alu-prev').addEventListener('click',()=>go(idx-1,true));
+    car.querySelector('.alu-next').addEventListener('click',()=>go(idx+1,true));
+    let sx=null;
+    car.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
+    car.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(idx+(dx<0?1:-1),true);sx=null;},{passive:true});
+    const delay=+car.dataset.autoplay||5000;
+    function restart(){if(timer)clearInterval(timer);if(!reduce){timer=setInterval(()=>go(idx+1),delay);}}
+    car.addEventListener('mouseenter',()=>{if(timer)clearInterval(timer);});
+    car.addEventListener('mouseleave',restart);
+    restart();
+  });
+</script>
+</body>
+</html>
